@@ -37,7 +37,7 @@ const CoachEditCore: React.FC = () => {
 
   const onFinish = (values: any) => {
     console.log('Received values of form: ', values);
-    axios.post('http://localhost:3001/base/ecoachee', 
+    axios.post('https://backend.lifecoachchina.co/base/ecoachee', 
       { name: values.name, 
         desc: values.desc,
         intro: values.intro,

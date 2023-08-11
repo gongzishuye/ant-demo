@@ -33,7 +33,7 @@ const ActivitiesCore: React.FC = () => {
  
   const fetchData = async () => {
     // 异步获取数据的逻辑
-    const resp = await axios.get('http://localhost:3001/base/activities');
+    const resp = await axios.get('https://backend.lifecoachchina.co/base/activities');
     const data = resp.data?.data;
     const dataNew = data.map((item:any)=>{
       item['avatar'] = item['gender'] === 'female' ? fAvatar: mAvatar;

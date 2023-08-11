@@ -54,7 +54,7 @@ const CoachCore: React.FC = () => {
  
   const fetchData = async () => {
     // 异步获取数据的逻辑
-    const resp = await axios.get('http://localhost:3001/base/coachs');
+    const resp = await axios.get('https://backend.lifecoachchina.co/base/coachs');
     const data = resp.data?.data;
     const dataNew = data.map((item:any)=>{
       item['avatar'] = item['gender'] === 'female' ? fAvatar: mAvatar;

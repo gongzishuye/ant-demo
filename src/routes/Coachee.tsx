@@ -66,7 +66,7 @@ const Coachee: React.FC = () => {
  
   const fetchData = async () => {
     // 异步获取数据的逻辑
-    const resp = await axios.get('http://localhost:3001/base/coachees');
+    const resp = await axios.get('https://backend.lifecoachchina.co/base/coachees');
     const data = resp.data?.data;
     const dataNew = data.map((item:any)=>{
       return item;

@@ -39,7 +39,7 @@ const ActivitiesCore: React.FC = () => {
 
   const onFinish = (values: any) => {
     console.log('Received values of form: ', values);
-    axios.post('http://localhost:3001/base/eactivity', 
+    axios.post('https://backend.lifecoachchina.co/base/eactivity', 
       { name: values.name, 
         intro: values.intro,
         content: values.content,
