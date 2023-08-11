@@ -121,7 +121,7 @@ const Coach = () => {
 
   const onClick = () => {
     if(context?.isLogged) {
-      navigate('/eactivities');
+      navigate('/ecoach');
     } else {
       message.error('请先登录');
     }

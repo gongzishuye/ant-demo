@@ -80,7 +80,7 @@ const Coachee: React.FC = () => {
 
   const onClick = () => {
     if(context?.isLogged) {
-      navigate('/eactivities');
+      navigate('/ecoachee');
     } else {
       message.error('请先登录');
     }
