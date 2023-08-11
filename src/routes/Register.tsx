@@ -48,7 +48,7 @@ const Register: React.FC = () => {
 
   const onFinish = (values: any) => {
     console.log('Received values of form: ', values);
-    axios.post('http://localhost:3001/base/registe', 
+    axios.post('https://backend.lifecoachchina.co/base/registe', 
       { username: values.username, 
         password: values.password,
         email: values.email
