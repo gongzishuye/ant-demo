@@ -15,6 +15,7 @@ import {
 import axios from 'axios';
 import { message } from 'antd';
 import { useNavigate } from 'react-router-dom';
+import { HOST } from './Contexts';
 
 const { Option } = Select;
 
@@ -48,7 +49,7 @@ const Register: React.FC = () => {
 
   const onFinish = (values: any) => {
     console.log('Received values of form: ', values);
-    axios.post('https://backend.lifecoachchina.co/base/registe', 
+    axios.post(`${HOST}/base/registe`, 
       { username: values.username, 
         password: values.password,
         email: values.email

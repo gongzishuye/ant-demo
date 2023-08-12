@@ -4,7 +4,7 @@ import { Button, Col, Form, Input, Row, Space } from 'antd';
 import axios from 'axios';
 import { message } from 'antd';
 import { useNavigate } from 'react-router-dom';
-import UserContext from './Contexts';
+import UserContext, { HOST } from './Contexts';
 
 const SubmitButton = ({ form }: { form: FormInstance }) => {
   const [submittable, setSubmittable] = React.useState(false);
@@ -37,7 +37,7 @@ const CoachEditCore: React.FC = () => {
 
   const onFinish = (values: any) => {
     console.log('Received values of form: ', values);
-    axios.post('https://backend.lifecoachchina.co/base/ecoachee', 
+    axios.post(`${HOST}/base/ecoachee`, 
       { name: values.name, 
         desc: values.desc,
         intro: values.intro,

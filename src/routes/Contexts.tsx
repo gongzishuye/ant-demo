@@ -15,4 +15,7 @@ export const mAvatar = 'https://xsgames.co/randomusers/assets/avatars/pixel/34.j
 
 const UserContext = React.createContext<UserState|null>(null);
 
+const env: string = 'online';
+export const HOST = env === 'dev'? 'http://localhost:3001': 'https://backend.lifecoachchina.co';
+
 export default UserContext;

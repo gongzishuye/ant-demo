@@ -4,7 +4,7 @@ import { Button, Col, Form, Input, Row, Select, Space } from 'antd';
 import axios from 'axios';
 import { message } from 'antd';
 import { useNavigate } from 'react-router-dom';
-import UserContext from './Contexts';
+import UserContext, { HOST } from './Contexts';
 
 const { Option } = Select;
 
@@ -39,7 +39,7 @@ const ActivitiesCore: React.FC = () => {
 
   const onFinish = (values: any) => {
     console.log('Received values of form: ', values);
-    axios.post('https://backend.lifecoachchina.co/base/eactivity', 
+    axios.post(`${HOST}/base/eactivity`, 
       { name: values.name, 
         intro: values.intro,
         content: values.content,

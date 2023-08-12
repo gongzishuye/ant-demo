@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Avatar, List, Space, Descriptions, Row, Col, Button, DescriptionsProps, message } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import axios from 'axios';
-import UserContext, { fAvatar, mAvatar } from './Contexts';
+import UserContext, { fAvatar, mAvatar, HOST } from './Contexts';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -54,7 +54,7 @@ const CoachCore: React.FC = () => {
  
   const fetchData = async () => {
     // 异步获取数据的逻辑
-    const resp = await axios.get('https://backend.lifecoachchina.co/base/coachs');
+    const resp = await axios.get(`${HOST}/base/coachs`);
     const data = resp.data?.data;
     const dataNew = data.map((item:any)=>{
       item['avatar'] = item['gender'] === 'female' ? fAvatar: mAvatar;
@@ -83,13 +83,6 @@ const CoachCore: React.FC = () => {
           <IconText icon={LikeOutlined} text="0" key="list-vertical-like-o" />,
           <IconText icon={MessageOutlined} text="0" key="list-vertical-message" />,
         ]}
-        extra={
-          <img
-            width={272}
-            alt="logo"
-            src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
-          />
-        }
       >
         <List.Item.Meta
           avatar={<Avatar src={item.avatar} />}

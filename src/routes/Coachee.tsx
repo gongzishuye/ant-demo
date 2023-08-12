@@ -4,7 +4,7 @@ import type { ColumnsType } from 'antd/es/table';
 import { UploadOutlined } from '@ant-design/icons';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import UserContext from './Contexts';
+import UserContext, { HOST } from './Contexts';
 
 interface DataType {
   name: string;
@@ -66,7 +66,7 @@ const Coachee: React.FC = () => {
  
   const fetchData = async () => {
     // 异步获取数据的逻辑
-    const resp = await axios.get('https://backend.lifecoachchina.co/base/coachees');
+    const resp = await axios.get(`${HOST}/base/coachees`);
     const data = resp.data?.data;
     const dataNew = data.map((item:any)=>{
       return item;

@@ -6,7 +6,7 @@ import axios from 'axios';
 import { fAvatar, mAvatar } from './Contexts';
 import { message } from 'antd';
 import { useNavigate } from 'react-router-dom';
-import UserContext from './Contexts';
+import UserContext, { HOST } from './Contexts';
 
 interface ActivityState {
   name: string;
@@ -33,7 +33,7 @@ const ActivitiesCore: React.FC = () => {
  
   const fetchData = async () => {
     // 异步获取数据的逻辑
-    const resp = await axios.get('https://backend.lifecoachchina.co/base/activities');
+    const resp = await axios.get(`${HOST}/base/activities`);
     const data = resp.data?.data;
     const dataNew = data.map((item:any)=>{
       item['avatar'] = item['gender'] === 'female' ? fAvatar: mAvatar;
@@ -62,13 +62,6 @@ const ActivitiesCore: React.FC = () => {
           <IconText icon={LikeOutlined} text="0" key="list-vertical-like-o" />,
           <IconText icon={MessageOutlined} text="0" key="list-vertical-message" />,
         ]}
-        extra={
-          <img
-            width={272}
-            alt="logo"
-            src="https://coachcampus.cn/wp-content/uploads/2018/03/Life_Coaching_Model_Cathy_Wang.png"
-          />
-        }
       >
         <List.Item.Meta
           avatar={<Avatar src={item.avatar} />}

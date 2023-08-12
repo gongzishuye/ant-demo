@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import UserContext from './Contexts';
+import UserContext, { HOST } from './Contexts';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input, Space } from 'antd';
 import { Link } from 'react-router-dom';
@@ -14,7 +14,7 @@ const Logins: React.FC = () => {
   
   const onFinish = (values: any) => {
     console.log('Received values of form: ', values);
-    axios.post('https://backend.lifecoachchina.co/base', { email: values.email, password: values.password })
+    axios.post(`${HOST}/base`, { email: values.email, password: values.password })
       .then(response => {
         const data = response.data;
         console.log(data);
