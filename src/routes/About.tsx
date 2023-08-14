@@ -20,7 +20,7 @@ const About: React.FC = () => {
     }
   >
     <Meta
-      avatar={<Avatar src="mAvatar" />}
+      avatar={<Avatar src={mAvatar} />}
       title="Guide"
       description={`
         Life Coach中国致力于向中国人科普Life Coach，帮助中国人探索自我、探索世界、成为自我、成为世界。
