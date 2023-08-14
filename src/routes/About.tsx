@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
 import { Avatar, Card } from 'antd';
+import { mAvatar } from './Contexts';
 
 const { Meta } = Card;
 
@@ -19,7 +20,7 @@ const About: React.FC = () => {
     }
   >
     <Meta
-      avatar={<Avatar src="https://xsgames.co/randomusers/avatar.php?g=pixel" />}
+      avatar={<Avatar src="mAvatar" />}
       title="Guide"
       description={`
         Life Coach中国致力于向中国人科普Life Coach，帮助中国人探索自我、探索世界、成为自我、成为世界。
