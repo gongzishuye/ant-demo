@@ -75,7 +75,7 @@ const ActivitiesCore: React.FC = () => {
               label: '自我介绍',
               children: (
                 <>
-                  {item.content.split('\n').map((line, index) => (
+                  {item.intro.split('\n').map((line, index) => (
                       <React.Fragment key={index}>
                         {line}
                         <br />
@@ -86,11 +86,25 @@ const ActivitiesCore: React.FC = () => {
             },
             {
               key: '2',
+              label: '活动介绍',
+              children: (
+                <>
+                  {item.content.split('\n').map((line, index) => (
+                      <React.Fragment key={index}>
+                        {line}
+                        <br />
+                      </React.Fragment>
+                    ))}
+                </>
+              ),
+            },
+            {
+              key: '3',
               label: '收取金额',
               children: item.charge,
             },
             {
-              key: '3',
+              key: '4',
               label: '联系方式',
               children: item.contact,
             },
