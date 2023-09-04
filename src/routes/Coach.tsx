@@ -94,7 +94,16 @@ const CoachCore: React.FC = () => {
             {
               key: '1',
               label: '自我介绍',
-              children: item.content,
+              children: (
+                <>
+                  {item.content.split('\n').map((line, index) => (
+                      <React.Fragment key={index}>
+                        {line}
+                        <br />
+                      </React.Fragment>
+                    ))}
+                </>
+              ),
             },
             {
               key: '2',
