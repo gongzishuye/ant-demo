@@ -5,6 +5,7 @@ import axios from 'axios';
 import { message } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import UserContext, { HOST } from './Contexts';
+import TextArea from 'antd/es/input/TextArea';
 
 const SubmitButton = ({ form }: { form: FormInstance }) => {
   const [submittable, setSubmittable] = React.useState(false);
@@ -66,10 +67,10 @@ const CoachEditCore: React.FC = () => {
         <Input />
       </Form.Item>
       <Form.Item name="desc" label="问题描述" rules={[{ required: true }]}>
-        <Input />
+        <TextArea rows={4} />
       </Form.Item>
       <Form.Item name="intro" label="自我介绍" rules={[{ required: true }]}>
-        <Input />
+        <TextArea rows={4} />
       </Form.Item>
       <Form.Item name="contact" label="联系方式" rules={[{ required: true }]}>
         <Input />
